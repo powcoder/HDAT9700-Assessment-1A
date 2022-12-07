@@ -1,0 +1,89 @@
+---
+title: "HDAT9700: Assessment 1A - Chapters 1-2"
+subtitle: "Addressing causal questions with observational data"
+author: "Name"
+date: "Date"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Submission instructions
+This is an R Markdown document, an example of *literate programming* which allows users to interweave text, statistical output and the code that produces that output. 
+
+To complete your assignment:   
+
+* Edit this file directly, interweaving text and R code as appropriate to answer the questions below. Remember to `Knit` the file to make sure everything is running smoothly. Detailed information on R Markdown is available [here](https://rmarkdown.rstudio.com/lesson-1.html), and there is a useful cheat sheet [here](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).  
+
+* Use Git to `commit` changes you make in this repo locally.   
+
+* `Push` the repo, together with this edited `.Rmd` file, the corresponding `.md` file and any other relevant files to GitHub.  
+
+* Note that the output format is specified as `github_document` in the chunk above. The advantage of this is that your submitted assessment can be viewed directly in GitHub. However, if you are using an R package that produces HTML output, you can change the output format to `html_document`.
+
+You can `commit` and `push` as often as necessary---your assessment will be graded on the most recent version of your repo at the assessment due date. 
+
+Good luck!
+
+
+***
+
+### Overview
+
+In this assessment you are provided with observational data on the health and smoking habits of 654 youth in the `lungcap` dataset shipped with the `GLMsData` package. If you don't have `GLMsData` installed you will need to install it. Your aim is to estimate the total causal effect of smoking on lung capacity. You will draw a DAG and undertake a matching analysis for this simple dataset. 
+
+When drawing your DAG you can use whatever tool you prefer. Options include `ggdag()` in R, [daggity.net](http://dagitty.net/dags.html), a screenshot from a DAG drawn in MS Word etc, or even an embedded picture of a DAG drawn with pen and paper.
+
+The `lungcap` dataset is drawn from [Tager et al (1983)](https://www.nejm.org/doi/full/10.1056/nejm198309223091204) _Longitudinal Study of the Effects of Maternal Smoking on Pulmonary Function in Children_. More details on the use of this dataset as a teaching dataset can be found in [Kahn, M. (2003) Data Sleuth, STATS, 37, 24.](https://www.causeweb.org/cause/filebrowser/download/353).
+
+Below is a brief description of the available variables, taken from the R help documentation. More information can be found by entering `?lungcap` at the console (provided the `GLMsData` pacakge is installed and loaded). 
+
+* **Age** the age of the subject in completed years; a numeric vector                                    
+* **FEV** the forced expiratory volume in litres, a measure of lung capacity; a numeric vector                               
+* **Ht** the height in inches; a numeric vector 
+* **Gender** the gender of the subjects: a numeric vector with females coded as 0 and males as 1                                          
+* **Smoke** the smoking status of the subject: a numeric vector with non-smokers coded as 0 and smokers as 1 
+
+***
+
+<br>
+
+### Assessment questions 
+
+Answer the questions below with reference to the `lungcap` dataset. Your aim is to estimate the total causal effect of smoking on lung capacity. 
+
+(1) Draw a DAG to represent the causal relationship between smoking and lung capacity. Write a brief descriptive paragraph that highlights any backdoor path(s) and the observed variables that might be useful to close the path(s). The DAG should be plausible but doesn't have to include every single possible relevant variable; <10 most relevant nodes should be adequate. (25%)
+
+    _Hint: Not all variables that appear in the dataset need to be on your DAG and not all nodes that are on your DAG will necessarily be observed variables._
+
+(2) Match smokers to non-smokers using a matching method of your choice and matching variables that are consistent with your DAG. Briefly summarise the balance in both cases, drawing on appropriate numerical and graphical summaries. (25%)
+
+(3) Fit the model `FEV ~ Smoke` in (i) The raw data and (ii) the matched data. Briefly describe the model results. How does the estimated effect for smoking change and why? (25%)
+
+(4) Briefly discuss any limitations of the model 3(ii) and argue whether or not the assumption of exchangeability is likely to hold. (25%)
+
+***
+
+### Solution 
+
+***
+
+<br>
+
+### Student declaration
+
+**_Instructions: Indicate that you understand and agree with the following three statements by typing an x in the square brackets below, e.g. [x]._** 
+
+I declare that this assessment item is my own work, except where acknowledged, and has not been submitted for academic credit elsewhere or previously, or produced independently of this course (e.g. for a third party such as your place of employment) and acknowledge that the assessor of this item may, for the purpose of assessing this item: (i) Reproduce this assessment item and provide a copy to another member of the University; and/or (ii) Communicate a copy of this assessment item to a plagiarism checking service (which may then retain a copy of the assessment item on its database for the purpose of future plagiarism checking).  
+
+- [ ] I understand and agree
+
+I certify that I have read and understood the University Rules in respect of Student Academic Misconduct.  
+
+- [ ] I understand and agree
+
+I have a backup copy of the assessment.  
+
+- [ ] I understand and agree
